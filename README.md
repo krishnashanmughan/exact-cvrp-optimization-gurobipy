@@ -1,7 +1,7 @@
-# exact-cvrp-optimization-gurobipy
+## exact-cvrp-optimization-gurobipy
 This project implements an exact mathematical model to solve the Capacitated Vehicle Routing Problem (CVRP).The goal is to minimize total fleet travel distance while ensuring that every customer is serviced exactly once and vehicle capacity limits ($Q$) are never breached.
 
-# Mathematical Formulation
+## Mathematical Formulation
 The core of the optimization engine relies on a Mixed-Integer Linear Programming (MILP) framework.
 
 **Objective Function:**
@@ -12,7 +12,7 @@ Minimize the total fleet travel distance:
 - Fleet Size Limit: Bounds the maximum number of vehicles ($K$) departing the depot.
 - MTZ Subtour Elimination: Eliminates disconnected loops and tracks the continuous load ($u_i$) to enforce vehicle capacity ($Q$).
 
-Results
+**Results:**
 The MTZ formulation was tested against standard CVRP benchmark datasets. The model successfully proves optimality for smaller networks and provides high-quality feasible bounds for larger instances.
 
 | Instance | Status | Objective (Distance) | MIP Gap | Time (sec) | Nodes Explored |
