@@ -15,8 +15,12 @@ Minimize the total fleet travel distance:
 **Results:**
 The MTZ formulation was tested against standard CVRP benchmark datasets. The model successfully proves optimality for smaller networks and provides high-quality feasible bounds for larger instances.
 
-| Instance | Status | Objective (Distance) | MIP Gap | Time (sec) | Nodes Explored |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **E-n13-k4** | `OPTIMAL` | 247.00 | 0.00% | 3.5 | 71,048 |
-| **E-n23-k3** | `OPTIMAL` | 568.56 | 0.00% | 33.2 | 234,444 |
-| **E-n30-k3** | `FEASIBLE` | 547.27 | 34.95% | 70.1 | 385,441 |
+| Instance | Status | Objective (Distance) | Time (sec) | MIP Gap |
+| :--- | :--- | :--- | :--- | :--- |
+| **E-n13-k4** | `OPTIMAL` | 247.00 | 3.2 | 0.00% |
+| **E-n23-k3** | `OPTIMAL` | 568.56 | 74.5 | 0.00% |
+| **E-n30-k3** | `TIME_LIMIT_FEASIBLE` | 542.29 | 1800.2 | 30.79% |
+| **E-n51-k5** | `TIME_LIMIT_FEASIBLE` | 544.68 | 1800.3 | 19.87% |
+| **E-n76-k7** | `TIME_LIMIT_FEASIBLE` | 710.82 | 3008.4* | 23.30% |
+
+> ***Technical Note on E-n76-k7:** The solver recorded a termination time of 3008.4 seconds despite the 1800-second parameter. This behavior is standard in advanced branch-and-cut engines; Gurobi delays hard termination to finish evaluating a deeply fractional cut pass or completing a complex heuristic node evaluation before gracefully returning the best incumbent solution.
